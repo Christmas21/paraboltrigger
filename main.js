@@ -6,7 +6,7 @@ class Parabol_mov {
     }
 }
 
-// Uinterface Constructor
+// Uinterface class
 class Uinterface {
 
     //Methods
@@ -86,22 +86,24 @@ class Uinterface {
             const time = Math.sqrt((2*vel0*Math.sin(2*angle0))/10);
             var y = ((vel0*Math.sin(angle0)*time)-(5*time*time));
             console.log(time,y);
-                /*for (var i = 0; i <= time; i+=0.01) {
-                    var x = (vel0*Math.cos(angle0)*i);
-                    var y = ((vel0*Math.sin(angle0)*i)-(5*i*i));
-                    ctx.arc(x,y+150,0.1,0,2);
+                for (var i = 0; i <= time; i+=0.01) {
+                    var x = (6)*(vel0*Math.cos(angle0)*i);
+                    var y = (-6)*((vel0*Math.sin(angle0)*i)-(5*i*i));
+                    ctx.arc(x,y+300,0.1,0,2);
                     ctx.stroke();
                     console.log(x,y,i);
-                }*/    
+                }    
         }
         else
         {
             alert('Tu navegador no soporta algunos elementos de la página');
         }
     }
-    clean() {
-        
-    }
+    
+    clean_canvas() {
+        var clean_btn = document.getElementById('myCanvas');
+        clean_btn.parentNode.removeChild(clean_btn);
+        }
 }
 
 //DOM events
@@ -174,4 +176,19 @@ document.getElementById('parabol-mov').addEventListener('click',
             //Prevents the page from refreshing
             e.preventDefault();
         }
+)
+
+//Event button clean
+document.getElementById('clean').addEventListener('click',
+    function (e) {
+        
+        //Create the object clean_canva
+        UIclean = new Uinterface();
+
+        //Call method clean_canvas
+        UIclean.clean_canvas();
+
+        //Prevents the page from refreshing 
+        e.preventDefault();
+    }
 )
