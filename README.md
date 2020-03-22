@@ -13,5 +13,5 @@ Gráfica la función trigonométrica del coseno y se repite por cuatro (4) perí
 - ### Movimiento parábolico
 Esta funcionalidad aún esta en etapa de desarrollo.
 
--## Limpiar el lienzo
+- ### Limpiar el lienzo
 Este botón limpia lo que hay en la etiqueta canvas junto con lo que halla dibujado.
